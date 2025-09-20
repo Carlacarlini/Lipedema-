@@ -1,0 +1,22 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const carrossel = document.querySelector('.carrossel-videos');
+    const prevBtn = document.querySelector('.carrossel-btn.prev');
+    const nextBtn = document.querySelector('.carrossel-btn.next');
+
+    // Largura do item de vídeo + espaçamento
+    const itemWidth = document.querySelector('.video-item').offsetWidth + 20;
+
+    prevBtn.addEventListener('click', () => {
+        carrossel.scrollBy({
+            left: -itemWidth,
+            behavior: 'smooth'
+        });
+    });
+
+    nextBtn.addEventListener('click', () => {
+        carrossel.scrollBy({
+            left: itemWidth,
+            behavior: 'smooth'
+        });
+    });
+});

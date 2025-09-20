@@ -1,0 +1,170 @@
+/* Estilos globais para a página */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* --- Estilo do Cabeçalho Fixo --- */
+.cabecalho {
+    /* Torna o cabeçalho fixo no topo da tela */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    /* Estilização */
+    background-color: rgb(255, 192, 250);
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Garante que o cabeçalho fique sobre outros elementos */
+}
+
+/* Container para os botões usando Flexbox */
+.container-botoes {
+    display: flex;
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    gap: 20px; /* Espaçamento entre os botões */
+    max-width: 960px; /* Largura máxima para telas grandes */
+    margin: 0 auto; /* Centraliza o container na página */
+}
+
+/* Estilo dos Botões */
+.botao {
+    background-color: whitesmoke;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+    background-color: #b3007a;
+}
+
+/* --- Estilo do Conteúdo Principal --- */
+.conteudo {
+    /* Adiciona uma margem superior para que o conteúdo não fique escondido
+       atrás do cabeçalho fixo */
+    padding-top: 80px; /* Ajuste este valor se o cabeçalho tiver altura diferente */
+    text-align: center;
+}
+/* Estilos Gerais (para melhor visualização) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* --- Carrossel de Vídeos --- */
+.carrossel-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.carrossel-titulo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.carrossel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Contêiner principal para os vídeos */
+.carrossel-videos {
+    display: flex; /* <-- Faz os itens ficarem lado a lado */
+    overflow-x: scroll; /* <-- Adiciona a barra de rolagem horizontal */
+    scroll-behavior: smooth; /* <-- Rolagem suave com o botão */
+    gap: 20px; /* Espaçamento entre os vídeos */
+    padding: 10px 0;
+    -ms-overflow-style: none; /* Oculta a barra de rolagem no IE e Edge */
+    scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
+}
+
+/* Contêiner principal para os vídeos */
+.carrossel-imagem {
+    display: flex; /* <-- Faz os itens ficarem lado a lado */
+    overflow-x: scroll; /* <-- Adiciona a barra de rolagem horizontal */
+    scroll-behavior: smooth; /* <-- Rolagem suave com o botão */
+    gap: 20px; /* Espaçamento entre os vídeos */
+    padding: 10px 0;
+    -ms-overflow-style: none; /* Oculta a barra de rolagem no IE e Edge */
+    scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
+}
+.carrossel-imagem:-webkit-scrollbar {
+    display: none;
+}
+
+.imagem-item {
+    flex-shrink: 0; /* Impede que os itens encolham */
+    width: 300px; /* Largura fixa para cada vídeo */
+    text-align: center;
+}
+
+.imagem-item video {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.imagem-item p {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Esconde a barra de rolagem para navegadores baseados em WebKit (Chrome, Safari) */
+.carrossel-videos::-webkit-scrollbar {
+    display: none;
+}
+
+.video-item {
+    flex-shrink: 0; /* Impede que os itens encolham */
+    width: 300px; /* Largura fixa para cada vídeo */
+    text-align: center;
+}
+
+.video-item video {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.video-item p {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Botões de navegação */
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.5em;
+    z-index: 10;
+}
+
+.carrossel-btn.prev {
+    left: 10px;
+}
+
+.carrossel-btn.next {
+    right: 10px;
+}

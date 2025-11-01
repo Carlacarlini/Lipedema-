@@ -1,320 +1,342 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cabeçalho Fixo com Botões</title>
     <link rel="stylesheet" href="lipedema.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
+
 <body>
 
-    <header class="cabecalho">
-        <div class="container-botoes">
-            <button class="botao">Inicio</button>
-            <button class="botao">Favoritos</button>
-            <button class="botao">pag2</button>
-            <button class="botao">pag 3</button>
-            <button class="botao">teste</button>
-        </div>
+    <header class="row cabecalho">
+        <a href="inicial.html" class="logo">Lipedema </a>
     </header>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrossel de Vídeos</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-<p>
+    <main class="row m-0 container-perfil">
+        <div class="col-2">
+            <aside class="sidebar-perfil">
+                <div class="foto-perfil">
+                    <label for="upload-foto" class="label-upload-foto">
+                        <img id="preview-foto" src="../imagens/Carla.jpg" alt="Foto do Usuário">
+                        <i class="fas fa-camera"></i>
+                    </label>
+                    <input type="file" id="upload-foto" accept="image/*" style="display: none;">
 
-</p>
-<p>
+                    <h2 id="nome-perfil">Olá, Carla!</h2>
+                    <p id="idade-perfil">37 anos</p>
+                    <p>Membro desde Outubro/2025</p>
+                </div>
 
-</p>
-<p>
+                <nav class="menu-perfil">
+                    <a href="inicial.html" class="active"><i class="fas fa-home"></i> Início</a>
+                    <a href="perfil.html"><i class="fas fa-user-circle"></i> Dados Pessoais</a>
+                    <a href="habitos.html"><i class="fas fa-chart-line"></i> Meus Hábitos (Rastreio)</a>
+                    <a href="metas.html"><i class="fas fa-heartbeat"></i> Metas de Saúde</a>
+                    <a href="comunidade.html"><i class="fas fa-users"></i> Comunidade</a>
+                    <a href="login.html"><i class="fas fa-sign-out"></i> Sair</a>
+                </nav>
+            </aside>
+        </div>
+        <div class="col-10">
+            <section>
 
-</p>
-    <main>
-        <div class="carrossel-container">
-            <div class="carrossel-titulo">
-                <h2>Nossos Destaques em Vídeo</h2>
-            </div>
-            
-            <div class="carrossel-wrapper">
-                <button class="carrossel-btn prev"><i class="fas fa-chevron-left"></i></button>
-                
-                <div class="carrossel-videos">
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+1+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 1</p>
+                <div class="carrossel-container">
+                    <div class="carrossel-titulo pad-top">
+                        <h2>Entenda o Lipedema</h2>
                     </div>
-                    
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+2+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 2</p>
+
+                    <div class="carrossel-wrapper">
+                        <button class="carrossel-btn prev" onclick="voltarItem('videos-cat1')">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+
+                        <div class="carrossel-videos carrossel-videos-cat1">
+                            <div class="video-item">
+                                <iframe src="https://www.youtube.com/embed/eqgURRnuG5I" title="Big Buck Bunny (YouTube)"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                                <p>Identificando o Lipedema</p>
+                            </div>
+
+                            <div class="video-item">
+                                <iframe src="https://www.youtube.com/embed/QNMhPlteFO8" title="Big Buck Bunny (YouTube)"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                                <p>8 sinais do Lipedema</p>
+                            </div>
+
+                            <div class="video-item">
+                                <iframe src="https://www.youtube.com/embed/lPzjGz7fRXk" title="Big Buck Bunny (YouTube)"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                                <p>Tratamento</p>
+                            </div>
+
+                            <div class="video-item">
+                                <iframe src="https://www.youtube.com/embed/khjkJAXlQMQ" title="Big Buck Bunny (YouTube)"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                                <p>Qual exercício fazer?</p>
+                            </div>
+
+                            <div class="video-item">
+                                <iframe src="https://www.youtube.com/embed/S1vgbu_qKKg" title="Big Buck Bunny (YouTube)"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                                <p>Lipoaspiração</p>
+                            </div>
+                        </div>
+
+                        <button class="carrossel-btn next" onclick="avancarItem('videos-cat1')">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
-                    
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+3+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 3</p>
+
+                </div>
+            </section>
+            <section>
+                <div class="carrossel-container">
+                    <div class="carrossel-titulo">
+                        <h2>Alimentação</h2>
                     </div>
-                    
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+4+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 4</p>
-                    </div>
-                    
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+5+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 5</p>
+
+                    <div class="carrossel-wrapper">
+                        <button class="carrossel-btn prev" onclick="voltarItem('videos-cat2')">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+
+                        <div class="carrossel-videos carrossel-videos-cat2">
+
+                            <div class="video-item">
+                                <iframe src="https://www.youtube.com/embed/Uk-QPOPEMTg&t=7s"
+                                    title="Big Buck Bunny (YouTube)"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                                <p>O papel essencial da alimentação</p>
+                            </div>
+
+                            <div class="video-item">
+                                <iframe src="https://www.youtube.com/embed/DrnN11oeOJM" title="Big Buck Bunny (YouTube)"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                                <p>Alimentos que podem causar inflamação</p>
+                            </div>
+
+                            <div class="video-item">
+                                <iframe src="https://www.youtube.com/embed/HJI_OcaZnkg&t=19s title=" Big Buck Bunny
+                                    (YouTube)"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                                <p>Dieta para Lipedema</p>
+                            </div>
+
+                            <div class="video-item">
+                                <iframe src="https://www.youtube.com/embed/GKms3YSNpt8&t=445s" Big Buck Bunny (YouTube)"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                                <p>Alimentos Anti-inflamatórios</p>
+                            </div>
+
+                            <div class="video-item">
+                                <iframe src="https://www.youtube.com/embed/OC0o_mGGQdE" Big Buck Bunny (YouTube)"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                                <p>Dieta Cetogênica</p>
+                            </div>
+                        </div>
+
+                        <button class="carrossel-btn next" onclick="avancarItem('videos-cat2')">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
-                
-                <button class="carrossel-btn next"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </div>
-    </main>
-    <main>
-        <div class="carrossel-container">
-            <div class="carrossel-titulo">
-                <h2>Nossos Destaques em Vídeo</h2>
-            </div>
-            
-            <div class="carrossel-wrapper">
-                <button class="carrossel-btn prev"><i class="fas fa-chevron-left"></i></button>
-                
-                <div class="carrossel-videos">
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+1+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 1</p>
+            </section>
+            <section>
+                <div class="carrossel-container">
+                    <div class="carrossel-titulo">
+                        <h2>21 Pequenos hábitos saudáveis</h2>
                     </div>
-                    
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+2+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 2</p>
-                    </div>
-                    
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+3+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 3</p>
-                    </div>
-                    
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+4+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 4</p>
-                    </div>
-                    
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+5+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 5</p>
+                    <div class="carrossel-container">
+                        <h1 class="titulo-carrossel">Minha Galeria de Imagens (21 Itens)</h1>
+
+                        <div class="carrossel-wrapper">
+
+                            <button class="carrossel-btn prev" onclick="voltarItem('imagens')">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+
+                            <div class="carrossel-imagens">
+                                <img src="../imagens/Beber agua.png" alt="Imagem beber500mlaagua" class="imagem-item">
+                                <img src="../imagens/cortar acucar.jpg" alt="Imagem cortar acucar" class="imagem-item">
+                                <img src="../imagens/frutas.png" alt="Imagem 3" class="imagem-item">
+                                <img src="../imagens/chas.jpg" alt="Imagem 4" class="imagem-item">
+                                <img src="../imagens/comer proteina.png" alt="Imagem 5" class="imagem-item">
+                                <img src="../imagens/organização do dia certo.png" alt="Imagem 6" class="imagem-item">
+                                <img src="../imagens/refri.png" alt="Imagem 7" class="imagem-item">
+                                <img src="../imagens/organizar seu dia.png" alt="Imagem 8" class="imagem-item">
+                                <img src="../imagens/tire o pao.png" alt="Imagem 9" class="imagem-item">
+                                <img src="../imagens/caminhar.png" alt="Imagem 10" class="imagem-item">
+                                <img src="../imagens/grupo de apoio.png" alt="Imagem 11" class="imagem-item">
+                                <img src="../imagens/reduza o sal.png" alt="Imagem 12" class="imagem-item">
+                                <img src="../imagens/escadas.png" alt="Imagem 13" class="imagem-item">
+                                <img src="../imagens/escovar a lingua.png" alt="Imagem 14" class="imagem-item">
+                                <img src="../imagens/or" alt="Imagem 15" class="imagem-item">
+                                <img src="../imagens/escovação a seco.png" alt="Imagem 16" class="imagem-item">
+                                <img src="../imagens/alongamento diario.png" alt="Imagem 17" class="imagem-item">
+                                <img src="../imagens/dormir 30 min mais cedo.png" alt="Imagem 18" class="imagem-item">
+                                <img src="imagens/imagem19.jpg" alt="Imagem 19" class="imagem-item">
+                                <img src="imagens/imagem20.jpg" alt="Imagem 20" class="imagem-item">
+                                <img src="imagens/imagem21.jpg" alt="Imagem 21" class="imagem-item">
+                            </div>
+
+                            <button class="carrossel-btn next" onclick="avancarItem('imagens')">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
-                
-                <button class="carrossel-btn next"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </div>
-    </main>
-    <main>
-        <div class="carrossel-container">
-            <div class="carrossel-titulo">
-                <h2>21 Pequenos hábitos saudáveis</h2>
-            </div>
-            
-            <div class="carrossel-wrapper">
-                <button class="carrossel-btn prev"><i class="fas fa-chevron-left"></i></button>
-                
-                <div class="carrossel-imagem">
-                    <div class="imagem-item">
-                        <imagem controls poster="https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-d6c4-622f-8720-df72a4e02285/raw?se=2025-09-20T13%3A40%3A36Z&sp=r&sv=2024-08-04&sr=b&scid=89cd8240-b0b9-5ddf-b5eb-d3b1b7d6fa7e&skoid=bbd22fc4-f881-4ea4-b2f3-c12033cf6a8b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-09-20T12%3A28%3A07Z&ske=2025-09-21T12%3A28%3A07Z&sks=b&skv=2024-08-04&sig=dPKZ4VNeCNs1R0MHBZ61vF0LL4LMNIJTmYe33KfKYRQ%3D">
-                            <source src="https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-d6c4-622f-8720-df72a4e02285/raw?se=2025-09-20T13%3A40%3A36Z&sp=r&sv=2024-08-04&sr=b&scid=89cd8240-b0b9-5ddf-b5eb-d3b1b7d6fa7e&skoid=bbd22fc4-f881-4ea4-b2f3-c12033cf6a8b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-09-20T12%3A28%3A07Z&ske=2025-09-21T12%3A28%3A07Z&sks=b&skv=2024-08-04&sig=dPKZ4VNeCNs1R0MHBZ61vF0LL4LMNIJTmYe33KfKYRQ%3D" type="imagem">
-                           
-                        </imagem>
-                        <p>Beber agua</p>
+            </section>
+            <section>
+                <div class="carrossel-container">
+                    <div class="carrossel-titulo">
+                        <h2>Exercícios </h2>
                     </div>
-                    
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+2+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 2</p>
-                    </div>
-                    
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+3+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 3</p>
-                    </div>
-                    
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+4+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 4</p>
-                    </div>
-                    
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+5+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 5</p>
-                    </div>
-                </div>
-                
-                <button class="carrossel-btn next"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </div>
-    </main>
-    <main>
-        <div class="carrossel-container">
-            <div class="carrossel-titulo">
-                <h2>Nossos Destaques em Vídeo</h2>
-            </div>
-            
-            <div class="carrossel-wrapper">
-                <button class="carrossel-btn prev"><i class="fas fa-chevron-left"></i></button>
-                
-                <div class="carrossel-videos">
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+1+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 1</p>
-                    </div>
-                    
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+2+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 2</p>
-                    </div>
-                    
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+3+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 3</p>
-                    </div>
-                    
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+4+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 4</p>
-                    </div>
-                    
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+5+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 5</p>
+
+                    <div class="carrossel-wrapper">
+                        <button class="carrossel-btn prev" onclick="voltarItem('videos-cat3')">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+
+                        <div class="carrossel-videos carrossel-videos-cat3">
+                            <div class="video-item">
+                                <iframe src="https://www.youtube.com/embed/hV2r2IanJw" title="Big Buck Bunny (YouTube)"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                                <p>Exercícios</p>
+                            </div>
+
+                            <div class="video-item">
+                                <iframe src="https://www.youtube.com/embed/ndm7ro9NPgw" title="Big Buck Bunny (YouTube)"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                                <p>Pode fazer musculação?</p>
+                            </div>
+
+                            <div class="video-item">
+                                <iframe src="https://www.youtube.com/embed/K_2foewVBdc" title="Big Buck Bunny (YouTube)"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                                <p>Treinos em casa</p>
+                            </div>
+
+
+                            <div class="video-item">
+                                <iframe src="https://www.youtube.com/embed/Ce7Bv2NiwaU" title="Big Buck Bunny (YouTube)"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                                <p>Treinos na água</p>
+                            </div>
+
+                            <div class="video-item">
+                                <iframe src="https://www.youtube.com/embed/pHeXuuHNVco" title="Big Buck Bunny (YouTube)"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                                <p>Fisioterapia e Lipedema</p>
+                            </div>
+                        </div>
+
+                        <button class="carrossel-btn next" onclick="avancarItem('videos-cat3')">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
-                
-                <button class="carrossel-btn next"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </div>
-    </main>
-    <main>
-        <div class="carrossel-container">
-            <div class="carrossel-titulo">
-                <h2>Nossos Destaques em Vídeo</h2>
-            </div>
-            
-            <div class="carrossel-wrapper">
-                <button class="carrossel-btn prev"><i class="fas fa-chevron-left"></i></button>
-                
-                <div class="carrossel-videos">
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+1+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 1</p>
+            </section>
+            <section>
+                <div class="carrossel-container">
+                    <div class="carrossel-titulo">
+                        <h2>Nossos Destaques em Vídeo</h2>
                     </div>
-                    
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+2+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 2</p>
-                    </div>
-                    
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+3+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 3</p>
-                    </div>
-                    
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+4+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 4</p>
-                    </div>
-                    
-                    <div class="video-item">
-                        <video controls poster="https://via.placeholder.com/640x360?text=Video+5+Preview">
-                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <p>Descrição do Vídeo 5</p>
+
+                    <div class="carrossel-wrapper">
+                        <button class="carrossel-btn prev" onclick="voltarItem('videos-cat4')">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+
+                        <div class="carrossel-videos carrossel-videos-cat4">
+                            <div class="video-item">
+                                <iframe src="https://www.youtube.com/embed/d41VEV1X0Qo" title="Big Buck Bunny (YouTube)"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                                <p>Escovação a seco</p>
+                            </div>
+
+                            <div class="video-item">
+                                <iframe src="https://www.youtube.com/embed/H-GRtisEc0s" title="Big Buck Bunny (YouTube)"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                                <p>Fisioterapia</p>
+                            </div>
+
+                            <div class="video-item">
+                                <iframe src="https://www.youtube.com/embed/dCcRphc8Uqo" title="Big Buck Bunny (YouTube)"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                                <p>Suplementação</p>
+                            </div>
+
+                            <div class="video-item">
+                                <iframe src="https://www.youtube.com/embed/vBKG9ekuWX4" title="Big Buck Bunny (YouTube)"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                                <p>Cirurgia para Lipedema</p>
+                            </div>
+
+                            <div class="video-item">
+                                <iframe src="https://www.youtube.com/embed/GN-24Us7m9I" title="Big Buck Bunny (YouTube)"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                                <p>Chás</p>
+                            </div>
+                        </div>
+
+                        <button class="carrossel-btn next" onclick="avancarItem('videos-cat4')">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
-                
-                <button class="carrossel-btn next"><i class="fas fa-chevron-right"></i></button>
-            </div>
+            </section>
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="lipedema.js"></script>
 </body>
-</html>
-</body>
+
 </html>

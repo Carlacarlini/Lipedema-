@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidade - Lipedema Insights</title>
+    <link rel="stylesheet" href="lipedema.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <a href="inicial.html" class="logo">Lipedema </a>
+       
+    </header>
+
+    <main class="container-comunidade">
+        <div class="col-2">
+            <aside class="sidebar-perfil">
+                <div class="foto-perfil">
+                    <label for="upload-foto" class="label-upload-foto">
+                        <img id="preview-foto" src="../imagens/Carla.jpg" alt="Foto do Usuário">
+                        <i class="fas fa-camera"></i>
+                    </label>
+                    <input type="file" id="upload-foto" accept="image/*" style="display: none;">
+
+                    <h2 id="nome-perfil">Olá, Carla!</h2>
+                    <p id="idade-perfil">37 anos</p>
+                    <p>Membro desde Outubro/2025</p>
+                </div>
+
+                <nav class="menu-perfil">
+                    <a href="inicial.html"><i class="fas fa-home"></i> Início</a>
+                    <a href="perfil.html" class="active"><i class="fas fa-user-circle"></i> Dados Pessoais</a>
+                    <a href="habitos.html"><i class="fas fa-chart-line"></i> Meus Hábitos (Rastreio)</a>
+                    <a href="metas.html"><i class="fas fa-heartbeat"></i> Metas de Saúde</a>
+                    <a href="comunidade.html"><i class="fas fa-users"></i> Comunidade</a>
+                    <a href="login.html"><i class="fas fa-sign-out"></i> Sair</a>
+                </nav>
+            </aside>
+        </div>
+
+
+        <div>
+            <h1>Conecte-se e Compartilhe Experiências</h1>
+            <p class="subtitulo">Um espaço seguro para trocar ideias, dicas e apoio sobre o Lipedema.</p>
+
+            <div class="card-novo-post">
+                <div class="header-post">
+                    <img src="https://via.placeholder.com/50/ff8fab/ffffff?text=MS" alt="Foto de Perfil"
+                        class="avatar-pequeno">
+                    <p>O que você gostaria de compartilhar hoje, **Carla**?</p>
+                </div>
+
+                <textarea id="novo-post-conteudo"
+                    placeholder="Compartilhe seu tópico, uma dica de exercício ou um desabafo..."></textarea>
+
+                <div class="acoes-post">
+                    <button class="btn-postar" onclick="simularPost()"><i class="fas fa-paper-plane"></i>
+                        Publicar</button>
+                </div>
+            </div>
+
+            <div class="feed-posts" id="feed-posts">
+
+                <div class="post-comunidade">
+                    <div class="header-post">
+                        <img src="https://via.placeholder.com/50/79d279/ffffff?text=AN" alt="Avatar Usuário"
+                            class="avatar">
+                        <div class="info-post">
+                            <span class="nome-usuario">Ana N.</span>
+                            <span class="data-post"><i class="far fa-clock"></i> há 2 horas</span>
+                        </div>
+                    </div>
+
+                    <h2>Dicas de Alívio para as Dores Noturnas!</h2>
+                    <p class="conteudo-post">
+                        Queria compartilhar algo que tem me ajudado muito. Eu comecei a dormir com as pernas levemente
+                        elevadas (uso uma almofada em cunha) e a diferença na dor e inchaço de manhã é enorme! Alguém
+                        mais
+                        faz isso? Qual a experiência de vocês com a elevação?
+                    </p>
+
+                    <div class="footer-post">
+                        <span class="likes"><i class="far fa-heart"></i> 15 Curtidas</span>
+                        <span class="comentarios"><i class="far fa-comment-dots"></i> 8 Comentários</span>
+                        <button class="btn-acao"><i class="fas fa-share-alt"></i> Compartilhar</button>
+                    </div>
+                </div>
+
+                <div class="post-comunidade">
+                    <div class="header-post">
+                        <img src="https://via.placeholder.com/50/ffd700/000000?text=LM" alt="Avatar Usuário"
+                            class="avatar">
+                        <div class="info-post">
+                            <span class="nome-usuario">Lúcia M.</span>
+                            <span class="data-post"><i class="far fa-clock"></i> Ontem</span>
+                        </div>
+                    </div>
+
+                    <h2>Suplementos que Realmente Funcionam?</h2>
+                    <p class="conteudo-post">
+                        Estou na fase de experimentação com suplementos anti-inflamatórios. Alguém tem boas experiências
+                        com
+                        Bromelina ou Rutina para o Lipedema? Meu médico sugeriu, mas queria ouvir a comunidade!
+                    </p>
+
+                    <div class="footer-post">
+                        <span class="likes"><i class="far fa-heart"></i> 22 Curtidas</span>
+                        <span class="comentarios"><i class="far fa-comment-dots"></i> 14 Comentários</span>
+                        <button class="btn-acao"><i class="fas fa-share-alt"></i> Compartilhar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // JS SIMULADO: Adiciona o novo post ao topo do feed
+        function simularPost() {
+            const conteudo = document.getElementById('novo-post-conteudo').value;
+            const feed = document.getElementById('feed-posts');
+
+            if (conteudo.trim() === "") {
+                alert("O post não pode ser vazio!");
+                return;
+            }
+
+            const novoPostHTML = `
+                <div class="post-comunidade novo">
+                    <div class="header-post">
+                        <img src="https://via.placeholder.com/50/ff8fab/ffffff?text=MS" alt="Foto de Perfil" class="avatar">
+                        <div class="info-post">
+                            <span class="nome-usuario">Maria S. (Você)</span>
+                            <span class="data-post"><i class="far fa-clock"></i> Agora</span>
+                        </div>
+                    </div>
+                    
+                    <h2>Novo Tópico Compartilhado!</h2>
+                    <p class="conteudo-post">${conteudo.replace(/\n/g, '<br>')}</p>
+                    
+                    <div class="footer-post">
+                        <span class="likes"><i class="far fa-heart"></i> 0 Curtidas</span>
+                        <span class="comentarios"><i class="far fa-comment-dots"></i> 0 Comentários</span>
+                        <button class="btn-acao"><i class="fas fa-share-alt"></i> Compartilhar</button>
+                    </div>
+                </div>
+            `;
+
+            // Adiciona o novo post no topo do feed
+            feed.insertAdjacentHTML('afterbegin', novoPostHTML);
+            document.getElementById('novo-post-conteudo').value = ""; // Limpa a caixa de texto
+        }
+    </script>
+</body>
+
+</html>

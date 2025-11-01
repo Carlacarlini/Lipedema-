@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil - Lipedema Insights</title>
+    <link rel="stylesheet" href="lipedema.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <header class="row cabecalho">
+        <a href="inicial.html" class="logo">Lipedema </a>
+    </header>
+
+    <main class="row m-0 container-perfil">
+
+        <div class="col-2">
+            <aside class="sidebar-perfil">
+                <div class="foto-perfil">
+                    <label for="upload-foto" class="label-upload-foto">
+                        <img id="preview-foto" src="../imagens/Carla.jpg" alt="Foto do Usuário">
+                        <i class="fas fa-camera"></i>
+                    </label>
+                    <input type="file" id="upload-foto" accept="image/*" style="display: none;">
+
+                    <h2 id="nome-perfil">Olá, [Seu Nome]!</h2>
+                    <p id="idade-perfil">[Idade]</p>
+                    <p>Membro desde Outubro/2025</p>
+                </div>
+
+                <nav class="menu-perfil">
+                    <a href="inicial.html"><i class="fas fa-home"></i> Início</a>
+                    <a href="perfil.html" class="active"><i class="fas fa-user-circle"></i> Dados Pessoais</a>
+                    <a href="habitos.html"><i class="fas fa-chart-line"></i> Meus Hábitos (Rastreio)</a>
+                    <a href="metas.html"><i class="fas fa-heartbeat"></i> Metas de Saúde</a>
+                    <a href="comunidade.html"><i class="fas fa-users"></i> Comunidade</a>
+                    <a href="login.html"><i class="fas fa-sign-out"></i> Sair</a>
+                </nav>
+            </aside>
+        </div>
+
+        <div class="col-10">
+            <section class="conteudo-perfil">
+                <h1>Dados Pessoais e Informações de Saúde</h1>
+
+                <div class="card-info">
+                    <h2>Informações Básicas</h2>
+                    <div class="info-group">
+                        <label for="input-nome">Nome Completo:</label>
+                        <input type="text" id="input-nome" value="Carla Aparecida Carlini">
+                    </div>
+                    <div class="info-group">
+                        <label for="input-idade">Idade:</label>
+                        <input type="number" id="input-idade" value="37">
+                    </div>
+                    <div class="info-group">
+                        <label for="input-email">E-mail:</label>
+                        <input type="email" id="input-email" value="carlacarlini@gmail.com" readonly>
+                    </div>
+                    <div class="info-group">
+                        <label for="input-telefone">Telefone:</label>
+                        <input type="tel" id="input-telefone" value="(47) 991768367">
+                    </div>
+                    <button class="btn-editar-dados"><i class="fas fa-save"></i> Salvar Dados Básicos</button>
+                </div>
+
+                <div class="card-info">
+                    <h2>Minhas Medidas (Acompanhamento)</h2>
+                    <div class="medidas-grid">
+                        <div class="medida-item"><span>Cintura:</span>
+                            <p>75 cm</p>
+                        </div>
+                        <div class="medida-item"><span>Coxa (E/D):</span>
+                            <p>65 cm / 66 cm</p>
+                        </div>
+                        <div class="medida-item"><span>Quadril:</span>
+                            <p>105 cm</p>
+                        </div>
+                        <div class="medida-item"><span>Panturrilha (E/D):</span>
+                            <p>42 cm / 43 cm</p>
+                        </div>
+                        <div class="medida-item"><span>Costas (Busto):</span>
+                            <p>90 cm</p>
+                        </div>
+                        <div class="medida-item"><span>Tornozelo (E/D):</span>
+                            <p class="destaque-medida">23 cm / 23 cm</p>
+                        </div>
+                    </div>
+                    <p class="data-medida">Última atualização: 28/Outubro/2025</p>
+                    <button class="btn-adicionar-medida"><i class="fas fa-plus"></i> Adicionar Nova Medida</button>
+                </div>
+
+                <div class="card-info">
+                    <h2>Acompanhamento de IMC</h2>
+                    <div class="info-imc">
+                        <div class="imc-input-group">
+                            <label for="peso">Peso (kg):</label>
+                            <input type="number" id="peso" value="70" step="0.1">
+                        </div>
+                        <div class="imc-input-group">
+                            <label for="altura">Altura (m):</label>
+                            <input type="number" id="altura" value="1.65" step="0.01">
+                        </div>
+                        <button class="btn-calcular-imc" onclick="calcularIMC()">Calcular IMC</button>
+                    </div>
+                    <div class="resultado-imc">
+                        <span>Seu IMC Atual:</span>
+                        <p id="valor-imc" class="destaque-imc">25.7</p>
+                        <p id="classificacao-imc" class="classificacao-imc">Sobrepeso</p>
+                    </div>
+                    <p class="aviso-imc">*O IMC não diferencia gordura e músculo, sendo limitado para o diagnóstico de
+                        Lipedema.</p>
+                </div>
+
+                <div class="card-info">
+                    <h2>Histórico de Lipedema</h2>
+                    <div class="info-item-saude">
+                        <span>Estágio Estimado:</span>
+                        <p class="destaque-saude">Estágio II</p>
+                    </div>
+                    <div class="info-item-saude">
+                        <span>Áreas Afetadas:</span>
+                        <p>Pernas e Coxas</p>
+                    </div>
+                    <div class="info-item-saude">
+                        <span>Sintoma Principal:</span>
+                        <p>Dor ao toque e inchaço vespertino.</p>
+                    </div>
+                    <button class="btn-editar-saude"><i class="fas fa-edit"></i> Editar Informações de Saúde</button>
+                </div>
+
+                <button class="btn-salvar-alteracoes-geral">Salvar Todas as Alterações</button>
+            </section>
+        </div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="lipedema.js"></script>
+</body>
+
+</html>

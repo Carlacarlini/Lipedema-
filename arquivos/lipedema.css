@@ -1,24 +1,13 @@
-/* Estilos globais para a página */
-body {
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* --- Estilo do Cabeçalho Fixo --- */
-.cabecalho {
-    /* Torna o cabeçalho fixo no topo da tela */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-
-    /* Estilização */
-    background-color: rgb(255, 192, 250);
-    color: white;
-    padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000; /* Garante que o cabeçalho fique sobre outros elementos */
+/* Estilos globais para a página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
 }
 
 /* Container para os botões usando Flexbox */
@@ -61,15 +50,7 @@ body {
     background-color: #f4f4f4;
 }
 
-/* --- Carrossel de Vídeos --- */
-.carrossel-container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #fff;
-}
+
 
 .carrossel-titulo {
     text-align: center;
@@ -107,12 +88,6 @@ body {
     display: none;
 }
 
-.imagem-item {
-    flex-shrink: 0; /* Impede que os itens encolham */
-    width: 300px; /* Largura fixa para cada vídeo */
-    text-align: center;
-}
-
 .imagem-item video {
     width: 100%;
     border-radius: 8px;
@@ -146,6 +121,10 @@ body {
     color: #555;
 }
 
+.video-item iframe {
+    height: 200px;
+}
+
 /* Botões de navegação */
 .carrossel-btn {
     position: absolute;
@@ -167,4 +146,1177 @@ body {
 
 .carrossel-btn.next {
     right: 10px;
+}
+.carrossel-imagens {
+    display: flex;
+    overflow-x: hidden; /* Oculta a barra de rolagem */
+    scroll-behavior: smooth;
+    gap: 15px; /* Espaçamento entre as imagens */
+}
+
+.imagem-item {
+    flex-shrink: 0; /* Impede que a imagem encolha */
+    width: 45%; /* Ocupa 100% da largura do contêiner */
+    height: auto;
+    max-height: 400px; /* Limita a altura para que caiba bem na tela */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    object-fit: contain; /* Garante que a imagem inteira seja visível */
+}
+
+.container-principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- Estilo do Carrossel de Imagens --- */
+.carrossel-container {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #cceeff;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.titulo-carrossel {
+    color: #004080; 
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.carrossel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Contêiner que exibe as imagens lado a lado */
+.carrossel-imagens {
+    display: flex; /* <--- CHAVE PARA O LAYOUT HORIZONTAL */
+    overflow-x: hidden; /* <--- Esconde a barra de rolagem nativa */
+    scroll-behavior: smooth; /* Animação de rolagem suave */
+    gap: 0; /* Espaçamento entre as imagens - zero para que fiquem coladas */
+}
+
+/* Estilo dos botões de navegação */
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.8em;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.carrossel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carrossel-btn.prev {
+    left: 0;
+}
+
+.carrossel-btn.next {
+    right: 0;
+}
+
+.pad-top {
+    padding-top: 30px;
+}
+
+/* --- Paleta de Cores Rosa --- */
+:root {
+    --rosa-claro: #ffe6f0;    /* Fundo principal, muito suave */
+    --rosa-medio: #ffc2d1;    /* Elementos secundários, bordas */
+    --rosa-escuro: #ff8fab;   /* Destaques, botões primários */
+    --rosa-texto: #e6005c;    /* Títulos, textos importantes */
+    --cinza-texto: #444;      /* Textos padrão */
+    --cinza-fundo: #fdf1f5;   /* Fundo de cards, suave */
+    --branco: #ffffff;
+}
+
+/* --- Estilos Gerais --- */
+.container-perfil {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--rosa-claro); /* Fundo principal em rosa claro */
+    color: var(--cinza-texto);
+    padding-top: 20px;
+}
+
+.cabecalho .logo {
+    color: var(--branco);
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+.btn-logout {
+    background-color: #f06292; /* Um tom de rosa mais forte para o logout */
+    border-radius: 5px;
+}
+
+.btn-logout:hover {
+    background-color: #d84368 !important;
+}
+
+
+/* --- Sidebar (Barra Lateral) --- */
+.sidebar-perfil {
+    width: 100%; /* Um pouco mais larga */
+    margin-right: 30px;
+    background-color: var(--branco);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    height: fit-content;
+    padding-bottom: 20px;
+}
+
+.foto-perfil {
+    text-align: center;
+    padding: 25px 20px;
+    border-bottom: 1px solid var(--rosa-medio);
+    position: relative;
+}
+
+.foto-perfil img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid var(--rosa-escuro); /* Borda rosa mais escura */
+    transition: transform 0.3s ease;
+}
+
+.foto-perfil img:hover {
+    transform: scale(1.05);
+}
+
+.label-upload-foto {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.label-upload-foto i {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: var(--rosa-escuro);
+    color: var(--branco);
+    border-radius: 50%;
+    padding: 8px;
+    font-size: 1em;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+}
+
+.label-upload-foto i:hover {
+    background-color: var(--rosa-texto);
+}
+
+.foto-perfil h2 {
+    color: var(--rosa-texto); /* Nome em destaque */
+    margin: 10px 0 5px;
+    font-size: 1.8em;
+}
+.foto-perfil p {
+    color: #888;
+    font-size: 0.9em;
+    margin: 0;
+}
+
+
+.menu-perfil {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.menu-perfil a {
+    text-decoration: none;
+    color: var(--cinza-texto);
+    padding: 15px 20px;
+    border-left: 4px solid transparent; /* Borda mais grossa */
+    transition: all 0.2s;
+    display: flex; /* Para alinhar ícone e texto */
+    align-items: center;
+}
+
+.menu-perfil a:hover,
+.menu-perfil a.active {
+    background-color: var(--rosa-claro); /* Fundo rosa claro no hover/ativo */
+    border-left-color: var(--rosa-escuro); /* Borda rosa escura no ativo */
+    color: var(--rosa-texto);
+}
+
+.menu-perfil i {
+    margin-right: 12px;
+    font-size: 1.1em;
+}
+
+/* --- Conteúdo Principal (Section) --- */
+.conteudo-perfil {
+    flex-grow: 1;
+}
+
+.conteudo-perfil h1 {
+    color: var(--rosa-texto);
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--rosa-medio); /* Linha divisória rosa */
+    padding-bottom: 10px;
+    font-size: 2.2em;
+}
+
+.card-info {
+    background-color: var(--branco);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.card-info h2 {
+    color: var(--rosa-escuro);
+    font-size: 1.5em;
+    border-bottom: 1px dashed var(--rosa-medio);
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Estilos de Input e Labels */
+.info-group {
+    margin-bottom: 15px;
+}
+
+.info-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--rosa-texto);
+}
+
+.info-group input {
+    width: calc(100% - 20px); /* Ajusta para padding */
+    padding: 10px;
+    border: 1px solid var(--rosa-medio);
+    border-radius: 6px;
+    font-size: 1em;
+    color: var(--cinza-texto);
+}
+
+.info-group input[readonly] {
+    background-color: var(--rosa-claro);
+    cursor: not-allowed;
+}
+
+.info-item, .info-item-saude {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dotted var(--rosa-claro);
+}
+
+.info-item:last-child, .info-item-saude:last-child {
+    border-bottom: none;
+}
+
+.info-item span, .info-item-saude span {
+    font-weight: bold;
+    color: var(--cinza-texto);
+    width: 40%;
+}
+
+.info-item p, .info-item-saude p {
+    color: var(--cinza-texto);
+    width: 60%;
+    text-align: right;
+    margin: 0;
+}
+
+.destaque-saude {
+    color: var(--rosa-texto) !important; /* Destaque em rosa */
+    font-weight: bold;
+}
+
+/* --- Medidas Grid --- */
+.medidas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+    margin-bottom: 15px;
+}
+
+.medida-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dotted var(--rosa-claro);
+}
+
+.medida-item span {
+    font-weight: bold;
+    color: var(--cinza-texto);
+}
+
+.medida-item p {
+    color: var(--cinza-texto);
+    text-align: right;
+    margin: 0;
+}
+
+.destaque-medida {
+    color: var(--rosa-escuro) !important; /* Destaque em rosa escuro */
+    font-weight: bold;
+}
+
+.data-medida {
+    font-size: 0.9em;
+    color: #888;
+    text-align: center;
+    margin: 10px 0 0;
+}
+
+/* --- IMC Section --- */
+.info-imc {
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+.imc-input-group {
+    flex-grow: 1;
+}
+
+.imc-input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--rosa-texto);
+}
+
+.imc-input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--rosa-medio);
+    border-radius: 4px;
+}
+
+.btn-calcular-imc {
+    background-color: var(--rosa-escuro); /* Botão de cálculo em rosa */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-calcular-imc:hover {
+    background-color: var(--rosa-texto);
+}
+
+.resultado-imc {
+    text-align: center;
+    border-top: 1px solid var(--rosa-claro);
+    padding-top: 15px;
+}
+
+.resultado-imc span {
+    font-size: 1.1em;
+    color: var(--cinza-texto);
+    font-weight: bold;
+}
+
+#valor-imc {
+    font-size: 2.5em;
+    margin: 5px 0 0;
+    color: var(--rosa-escuro);
+}
+
+.classificacao-imc {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    color: white;
+}
+
+/* Cores de Classificação de IMC (tons que combinam com rosa) */
+.imc-baixo { background-color: #f8d7da; color: #721c24; } /* Vermelho claro */
+.imc-ideal { background-color: #d4edda; color: #155724; } /* Verde claro */
+.imc-sobrepeso { background-color: #ffeeba; color: #856404; } /* Amarelo claro */
+.imc-obesidade { background-color: #f5c6cb; color: #721c24; } /* Rosa avermelhado */
+
+.aviso-imc {
+    font-size: 0.8em;
+    color: #888;
+    margin-top: 15px;
+}
+
+/* Botões de Ação Global */
+.btn-editar-dados,
+.btn-adicionar-medida,
+.btn-editar-saude,
+.btn-salvar-alteracoes-geral {
+    background-color: var(--rosa-escuro);
+    color: var(--branco);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    font-size: 1em;
+}
+
+.btn-salvar-alteracoes-geral {
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    background-color: var(--rosa-texto); /* Botão principal em rosa forte */
+    font-size: 1.1em;
+    padding: 12px 15px;
+}
+
+.btn-salvar-alteracoes-geral:hover {
+    background-color: #c4004a; /* Tom mais escuro no hover */
+}
+
+.btn-editar-dados:hover,
+.btn-adicionar-medida:hover,
+.btn-editar-saude:hover {
+    background-color: var(--rosa-texto);
+}
+/* --- Paleta de Cores Rosa (Consistente com a página de Perfil) --- */
+:root {
+    --rosa-claro: #ffe6f0;    /* Fundo principal, muito suave */
+    --rosa-medio: #ffc2d1;    /* Elementos secundários, bordas */
+    --rosa-escuro: #ff8fab;   /* Destaques, botões primários */
+    --rosa-texto: #e6005c;    /* Títulos, textos importantes */
+    --cinza-texto: #444;      /* Textos padrão */
+    --branco: #ffffff;
+}
+
+/* --- Estilos Gerais --- */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--rosa-claro);
+    color: var(--cinza-texto);
+}
+
+/* --- Cabeçalho --- */
+.cabecalho {
+    background-color: var(--rosa-escuro);
+    color: var(--branco);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cabecalho .logo {
+    color: var(--branco);
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.btn-logout { background-color: #f06292; border-radius: 5px; padding: 5px 10px; }
+.btn-logout:hover { background-color: #d84368 !important; }
+
+/* --- Layout Principal --- */
+.container-habitos {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+h1 {
+    color: var(--rosa-texto);
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.rastreador-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start; /* Alinha o topo dos cards */
+}
+
+/* --- Cards --- */
+.card-calendario, .card-rastreio {
+    background-color: var(--branco);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.card-calendario {
+    width: 400px;
+    flex-shrink: 0;
+}
+
+.card-rastreio {
+    flex-grow: 1;
+}
+
+/* --- Estilos do Calendário --- */
+.cabecalho-calendario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.cabecalho-calendario h2 {
+    color: var(--rosa-texto);
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.btn-nav {
+    background: none;
+    border: none;
+    color: var(--rosa-escuro);
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    transition: color 0.2s;
+}
+.btn-nav:hover {
+    color: var(--rosa-texto);
+}
+
+.dias-semana {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: bold;
+    color: var(--rosa-escuro);
+    margin-bottom: 10px;
+}
+.dias-semana span {
+    text-align: center;
+    padding: 5px 0;
+}
+
+.dias-calendario {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.dia-calendario {
+    background-color: var(--rosa-claro);
+    color: var(--cinza-texto);
+    padding: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    font-weight: bold;
+    text-align: center;
+    height: 40px;
+    line-height: 20px;
+    border: 1px solid var(--rosa-medio);
+}
+
+.dia-calendario:hover {
+    background-color: var(--rosa-medio);
+}
+
+.dia-calendario.vazio {
+    background: none;
+    border: none;
+    cursor: default;
+}
+
+/* Destaques de Dias */
+.dia-calendario.hoje {
+    border: 2px solid var(--rosa-texto);
+    background-color: #ff99aa; /* Rosa mais vibrante */
+    color: var(--branco);
+}
+
+.dia-calendario.selecionado {
+    background-color: var(--rosa-texto);
+    color: var(--branco);
+    border: 2px solid var(--rosa-texto);
+}
+
+.dia-calendario.completo {
+    background-color: #79d279; /* Verde Sucesso */
+    color: var(--branco);
+}
+
+/* --- Estilos da Lista de Hábitos --- */
+.card-rastreio h2 {
+    color: var(--rosa-escuro);
+    border-bottom: 1px solid var(--rosa-medio);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.status-dia {
+    font-weight: bold;
+    color: var(--rosa-texto);
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.lista-habitos {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    height: 400px; /* Limita a altura para que o card não seja muito longo */
+    overflow-y: auto;
+    border: 1px solid var(--rosa-claro);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.lista-habitos li {
+    padding: 10px 0;
+    border-bottom: 1px dotted var(--rosa-medio);
+}
+
+.lista-habitos li:last-child {
+    border-bottom: none;
+}
+
+.lista-habitos label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.habit-texto {
+    margin-left: 10px;
+    flex-grow: 1;
+}
+
+.lista-habitos input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--rosa-escuro);
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+.lista-habitos input[type="checkbox"]:checked {
+    background-color: var(--rosa-texto);
+    border-color: var(--rosa-texto);
+}
+
+.lista-habitos input[type="checkbox"]:checked::after {
+    content: '\f00c'; /* Código do ícone de check (Font Awesome) */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Botão de Salvar */
+.btn-salvar-habitos {
+    background-color: var(--rosa-texto);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+.btn-salvar-habitos:hover {
+    background-color: #c4004a; /* Tom mais escuro */
+}
+/* --- Paleta de Cores Rosa (Consistente com o projeto) --- */
+:root {
+    --rosa-claro: #ffe6f0;    /* Fundo principal, muito suave */
+    --rosa-medio: #ffc2d1;    /* Bordas, divisores */
+    --rosa-escuro: #ff8fab;   /* Destaques, botões secundários */
+    --rosa-texto: #e6005c;    /* Títulos, botões primários */
+    --cinza-texto: #444;      /* Textos padrão */
+    --branco: #ffffff;
+    --fundo-card: #fdf1f5;    /* Fundo dos posts */
+}
+
+/* --- Estilos Gerais --- */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--rosa-claro);
+    color: var(--cinza-texto);
+}
+
+/* --- Cabeçalho (Reutilizado) --- */
+.cabecalho {
+    background-color: var(--rosa-escuro);
+    color: var(--branco);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.cabecalho .logo, .cabecalho nav a {
+    color: var(--branco);
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+.btn-logout { background-color: #f06292; border-radius: 5px; padding: 5px 10px; }
+.btn-logout:hover { background-color: #d84368 !important; }
+
+/* --- Layout Principal --- */
+.container-comunidade {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    color: var(--rosa-texto);
+    margin-bottom: 5px;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+.subtitulo {
+    color: var(--cinza-texto);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+/* --- Estilos de Postagem (Novo Post) --- */
+.card-novo-post {
+    background-color: var(--branco);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    border: 1px solid var(--rosa-medio);
+}
+
+.card-novo-post .header-post {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-novo-post .header-post p {
+    margin: 0;
+    color: var(--cinza-texto);
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.avatar-pequeno {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--rosa-escuro);
+}
+
+textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid var(--rosa-medio);
+    border-radius: 8px;
+    resize: vertical;
+    font-family: 'Arial', sans-serif;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.acoes-post {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.btn-postar {
+    background-color: var(--rosa-texto);
+    color: var(--branco);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-postar:hover {
+    background-color: #c4004a;
+}
+
+/* --- Estilos do Feed --- */
+.post-comunidade {
+    background-color: var(--fundo-card);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    border-left: 5px solid var(--rosa-escuro);
+}
+
+.post-comunidade.novo {
+    border-left-color: #28a745; /* Verde para destacar novo post */
+}
+
+/* Header do Post */
+.post-comunidade .header-post {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post-comunidade .avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 3px solid var(--rosa-medio);
+}
+
+.post-comunidade .info-post {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-comunidade .nome-usuario {
+    font-weight: bold;
+    color: var(--rosa-texto);
+    font-size: 1.1em;
+}
+
+.post-comunidade .data-post {
+    font-size: 0.8em;
+    color: #888;
+}
+
+/* Conteúdo */
+.post-comunidade h2 {
+    color: var(--rosa-texto);
+    font-size: 1.3em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.post-comunidade .conteudo-post {
+    color: var(--cinza-texto);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--rosa-medio);
+    padding-bottom: 15px;
+}
+
+/* Footer do Post (Ações) */
+.post-comunidade .footer-post {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9em;
+}
+
+.post-comunidade .likes,
+.post-comunidade .comentarios {
+    color: var(--rosa-escuro);
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.post-comunidade .likes i,
+.post-comunidade .comentarios i {
+    margin-right: 5px;
+}
+
+.btn-acao {
+    background: none;
+    border: none;
+    color: var(--rosa-escuro);
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.btn-acao:hover {
+    color: var(--rosa-texto);
+}
+/* --- Paleta de Cores Rosa (Consistente com o projeto) --- */
+:root {
+    --rosa-claro: #ffe6f0;    /* Fundo principal, muito suave */
+    --rosa-medio: #ffc2d1;    /* Bordas, divisores */
+    --rosa-escuro: #ff8fab;   /* Destaques, títulos de cards */
+    --rosa-texto: #e6005c;    /* Títulos, botões primários */
+    --cinza-texto: #444;      /* Textos padrão */
+    --branco: #ffffff;
+    --fundo-card: #fdf1f5;    /* Fundo de cards, suave */
+}
+
+/* --- Estilos Gerais --- */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--rosa-claro);
+    color: var(--cinza-texto);
+}
+
+/* --- Cabeçalho (Reutilizado) --- */
+.cabecalho .logo, .cabecalho nav a { color: var(--branco); text-decoration: none; font-size: 1.1em; }
+.btn-logout { background-color: #f06292; border-radius: 5px; padding: 5px 10px; }
+
+/* --- Layout Principal --- */
+.container-metas {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 50px 20px;
+
+}
+
+h1 {
+    color: var(--rosa-texto);
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+/* --- Card de Metas Resumo --- */
+.card-metas-resumo {
+    background-color: var(--branco);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.card-metas-resumo h2 {
+    color: var(--rosa-escuro);
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.metas-lista {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.meta-item {
+    background-color: var(--rosa-claro);
+    color: var(--rosa-texto);
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 1px solid var(--rosa-medio);
+}
+
+.meta-item i {
+    margin-right: 8px;
+    color: var(--rosa-escuro);
+}
+
+.btn-editar-metas {
+    background-color: var(--rosa-escuro);
+    color: var(--branco);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-editar-metas:hover {
+    background-color: var(--rosa-texto);
+}
+
+/* --- Layout de Conteúdo (Duas Colunas) --- */
+.conteudo-plano {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+    gap: 30px;
+}
+
+.card-plano {
+    background-color: var(--fundo-card);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    height: 100%; /* Garante que os cards tenham a mesma altura visualmente */
+    box-sizing: border-box;
+}
+
+.card-plano h2 {
+    color: var(--rosa-texto);
+    border-bottom: 2px solid var(--rosa-medio);
+    padding-bottom: 10px;
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+.card-plano h2 i {
+    margin-right: 10px;
+}
+
+/* --- Estilos da Dieta --- */
+.dieta-foco {
+    font-style: italic;
+    color: #888;
+    margin-bottom: 25px;
+}
+
+.cardapio-dia {
+    border: 1px solid var(--rosa-medio);
+    border-radius: 8px;
+    padding: 15px;
+    background-color: var(--branco);
+}
+
+.cardapio-dia h3 {
+    color: var(--rosa-escuro);
+    border-bottom: 1px dashed var(--rosa-medio);
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+.refeicao-item {
+    padding: 10px 0;
+    border-bottom: 1px dotted var(--rosa-claro);
+}
+
+.refeicao-item:last-child {
+    border-bottom: none;
+}
+
+.refeicao-titulo {
+    font-weight: bold;
+    color: var(--rosa-texto);
+    display: block;
+    margin-bottom: 3px;
+}
+
+.refeicao-titulo i {
+    color: var(--rosa-escuro);
+    margin-right: 5px;
+}
+
+/* --- Estilos de Exercícios --- */
+.exercicio-foco {
+    font-style: italic;
+    color: #888;
+    margin-bottom: 25px;
+}
+
+.lista-exercicios {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-exercicios li {
+    background-color: var(--branco);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 5px solid var(--rosa-escuro);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.tipo-exercicio {
+    font-weight: bold;
+    color: var(--rosa-texto);
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.lista-exercicios li p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* --- Botões de Ação --- */
+.btn-saiba-mais {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--rosa-escuro);
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.btn-saiba-mais:hover {
+    background-color: #ff6699;
+}
+
+.btn-salvar-plano-final {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto 30px;
+    background-color: var(--rosa-texto);
+    color: var(--branco);
+    border: none;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-salvar-plano-final:hover {
+    background-color: #c4004a;
+}
+
+/* --- Responsividade Básica (Para Telas Menores) --- */
+@media (max-width: 768px) {
+    .conteudo-plano {
+        grid-template-columns: 1fr; /* Muda para uma coluna em telas pequenas */
+    }
+
+    .metas-lista {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

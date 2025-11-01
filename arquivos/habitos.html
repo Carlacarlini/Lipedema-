@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acompanhamento de Hábitos - Lipedema Insights</title>
+    <link rel="stylesheet" href="lipedema.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <a href="inicial.html" class="logo">Lipedema </a>
+        <nav>
+           
+        </nav>
+    </header>
+
+    <main class="row m-0 container-habitos">
+        <div class="col-2">
+            <aside class="sidebar-habitos">
+                <div class="foto-perfil">
+                    <label for="upload-foto" class="label-upload-foto">
+                        <img id="preview-foto" src="../imagens/Carla.jpg" alt="Foto do Usuário">
+                        <i class="fas fa-camera"></i>
+                    </label>
+                    <input type="file" id="upload-foto" accept="image/*" style="display: none;">
+                    
+                    <h2 id="nome-perfil">Olá, Carla!</h2>
+                    <p id="idade-perfil">37 anos</p>
+                    <p>Membro desde Outubro/2025</p>
+                </div>
+                
+                <nav class="menu-perfil">
+                    <a href="inicial.html"><i class="fas fa-home"></i> Início</a>
+                    <a href="perfil.html" class="active"><i class="fas fa-user-circle"></i> Dados Pessoais</a>
+                    <a href="habitos.html"><i class="fas fa-chart-line"></i> Meus Hábitos (Rastreio)</a>
+                    <a href="metas.html"><i class="fas fa-heartbeat"></i> Metas de Saúde</a>
+                    <a href="comunidade.html"><i class="fas fa-users"></i> Comunidade</a>
+                    <a href="login.html"><i class="fas fa-sign-out"></i> Sair</a>
+                </nav>
+            </aside>
+        </div>
+
+        <div class="col-10">
+        
+        <h1>Meu Calendário de Hábitos Saudáveis</h1>
+        
+        <div class="rastreador-wrapper">
+            
+            <div class="card-calendario">
+                <div class="cabecalho-calendario">
+                    <button id="prevMonth" class="btn-nav"><i class="fas fa-chevron-left"></i></button>
+                    <h2 id="monthYear">Outubro 2025</h2>
+                    <button id="nextMonth" class="btn-nav"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="dias-semana">
+                    <span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
+                </div>
+                <div class="dias-calendario" id="dias-calendario">
+                    </div>
+            </div>
+
+            <div class="card-rastreio">
+                <h2 id="titulo-rastreio">Hábitos para: 31/10/2025</h2>
+                <p class="status-dia" id="status-dia">Nenhum hábito marcado ainda.</p>
+
+                <ul class="lista-habitos" id="lista-habitos">
+                    <li data-habit-id="1">
+                        <label>
+                            <input type="checkbox">
+                            <span class="habit-texto">1. Fazer 30 minutos de caminhada.</span>
+                        </label>
+                    </li>
+                    <li data-habit-id="2">
+                        <label>
+                            <input type="checkbox">
+                            <span class="habit-texto">2. Elevar as pernas por 15 minutos.</span>
+                        </label>
+                    </li>
+                    <li data-habit-id="3">
+                        <label>
+                            <input type="checkbox">
+                            <span class="habit-texto">3. Beber 2 litros de água.</span>
+                        </label>
+                    </li>
+                    <li data-habit-id="4">
+                        <label>
+                            <input type="checkbox">
+                            <span class="habit-texto">4. Evitar alimentos processados.</span>
+                        </label>
+                    </li>
+                    <li data-habit-id="5">
+                        <label>
+                            <input type="checkbox">
+                            <span class="habit-texto">5. Usar meias de compressão.</span>
+                        </label>
+                    </li>
+                    <li data-habit-id="6">
+                        <label>
+                            <input type="checkbox">
+                            <span class="habit-texto">6. Fazer drenagem linfática manual (DLM).</span>
+                        </label>
+                    </li>
+                    <li data-habit-id="7">
+                        <label>
+                            <input type="checkbox">
+                            <span class="habit-texto">7. Praticar respiração diafragmática.</span>
+                        </label>
+                    </li>
+                    </ul>
+
+                <button class="btn-salvar-habitos"><i class="fas fa-check-circle"></i> Salvar Hábitos do Dia</button>
+            </div>
+            
+        </div>
+        </div>
+
+    </main>
+
+    <script src="lipedema.js"></script>
+</body>
+</html>

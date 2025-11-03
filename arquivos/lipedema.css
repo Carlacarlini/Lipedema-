@@ -242,7 +242,7 @@ body {
     --rosa-medio: #ffc2d1;    /* Elementos secundários, bordas */
     --rosa-escuro: #ff8fab;   /* Destaques, botões primários */
     --rosa-texto: #e6005c;    /* Títulos, textos importantes */
-    --cinza-texto: #444;      /* Textos padrão */
+    --cinza-texto: #fdf1f5;      /* Textos padrão */
     --cinza-fundo: #fdf1f5;   /* Fundo de cards, suave */
     --branco: #ffffff;
 }
@@ -900,7 +900,7 @@ body {
 
 /* --- Layout Principal --- */
 .container-comunidade {
-    max-width: 800px;
+    max-width: 1100px;
     margin: 30px auto;
     padding: 0 20px;
 }
@@ -1104,7 +1104,7 @@ body {
 /* --- Layout Principal --- */
 .container-metas {
     max-width: 1200px;
-    margin: 30px auto;
+    margin: 20px auto;
     padding: 50px 20px;
 
 }

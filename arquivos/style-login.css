@@ -20,7 +20,11 @@ body {
 h1 {
     font-weight: bold;
     margin: 0;
-    color:black;
+    color:#b3007a;
+}
+
+h1.dark{
+    color:#FFFFFF ;
 }
 
 p {
@@ -44,7 +48,7 @@ a {
 }
 
 /* Botões Padrão e Ghost */
-button {
+.modal-footer button, button {
     border-radius: 20px;
     border: 1px solid #b3007a;
     background-color: #b3007a;
@@ -58,15 +62,20 @@ button {
     cursor: pointer;
 }
 
-button:active {
+.modal-footer button:hover {
+    background-color: #b3007a;
+    color: #FFFFFF;
+}
+
+.modal-footer button:active, button:active {
     transform: scale(0.95);
 }
 
-button:focus {
+.modal-footer button:focus, button:focus {
     outline: none;
 }
 
-button.ghost {
+.modal-footer button.ghost, button.ghost {
     background-color: transparent;
     border-color: #FFFFFF;
 }
@@ -159,7 +168,7 @@ input {
 
 .overlay {
     background:#b3007a;
-    background: linear-gradient(to right,#b3007a, #4c96d7); /* Gradiente Lipedema */
+    background: linear-gradient(to right,#b3007a, #6c4793); /* Gradiente Lipedema */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
@@ -208,4 +217,8 @@ input {
 
 .container-login.right-panel-active .overlay-right {
     transform: translateX(20%);
+}
+
+.pointer {
+    cursor: pointer;
 }

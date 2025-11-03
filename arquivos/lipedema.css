@@ -10,14 +10,6 @@ body {
     background-color: #f0f0f0;
 }
 
-/* Container para os botões usando Flexbox */
-.container-botoes {
-    display: flex;
-    justify-content: center; /* Centraliza os botões horizontalmente */
-    gap: 20px; /* Espaçamento entre os botões */
-    max-width: 960px; /* Largura máxima para telas grandes */
-    margin: 0 auto; /* Centraliza o container na página */
-}
 
 /* Estilo dos Botões */
 .botao {
@@ -165,13 +157,6 @@ body {
     object-fit: contain; /* Garante que a imagem inteira seja visível */
 }
 
-.container-principal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
 /* --- Estilo do Carrossel de Imagens --- */
 .carrossel-container {
     width: 100%;
@@ -248,11 +233,11 @@ body {
 }
 
 /* --- Estilos Gerais --- */
-.container-perfil {
-    font-family: 'Arial', sans-serif;
+.container-principal {
     background-color: var(--rosa-claro); /* Fundo principal em rosa claro */
     color: var(--cinza-texto);
-    padding-top: 20px;
+    padding: 20px 0;
+    width: 100%;
 }
 
 .cabecalho .logo {
@@ -274,7 +259,7 @@ body {
 
 
 /* --- Sidebar (Barra Lateral) --- */
-.sidebar-perfil {
+.sidebar {
     width: 100%; /* Um pouco mais larga */
     margin-right: 30px;
     background-color: var(--branco);
@@ -374,12 +359,16 @@ body {
     flex-grow: 1;
 }
 
-.conteudo-perfil h1 {
+h1 {
     color: var(--rosa-texto);
-    margin-bottom: 25px;
     border-bottom: 2px solid var(--rosa-medio); /* Linha divisória rosa */
-    padding-bottom: 10px;
+    padding: 20px 0;
     font-size: 2.2em;
+    text-align: center;
+}
+
+h2 {
+    color: var(--rosa-texto);
 }
 
 .card-info {
@@ -645,20 +634,6 @@ body {
 .btn-logout { background-color: #f06292; border-radius: 5px; padding: 5px 10px; }
 .btn-logout:hover { background-color: #d84368 !important; }
 
-/* --- Layout Principal --- */
-.container-habitos {
-    max-width: 1100px;
-    margin: 30px auto;
-    padding: 0 20px;
-    text-align: center;
-}
-
-h1 {
-    color: var(--rosa-texto);
-    margin-bottom: 30px;
-    font-size: 2.5em;
-}
-
 .rastreador-wrapper {
     display: flex;
     gap: 30px;
@@ -898,20 +873,6 @@ body {
 .btn-logout { background-color: #f06292; border-radius: 5px; padding: 5px 10px; }
 .btn-logout:hover { background-color: #d84368 !important; }
 
-/* --- Layout Principal --- */
-.container-comunidade {
-    max-width: 1100px;
-    margin: 30px auto;
-    padding: 0 20px;
-}
-
-h1 {
-    color: var(--rosa-texto);
-    margin-bottom: 5px;
-    font-size: 2.5em;
-    text-align: center;
-}
-
 .subtitulo {
     color: var(--cinza-texto);
     text-align: center;
@@ -1100,21 +1061,6 @@ body {
 /* --- Cabeçalho (Reutilizado) --- */
 .cabecalho .logo, .cabecalho nav a { color: var(--branco); text-decoration: none; font-size: 1.1em; }
 .btn-logout { background-color: #f06292; border-radius: 5px; padding: 5px 10px; }
-
-/* --- Layout Principal --- */
-.container-metas {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 50px 20px;
-
-}
-
-h1 {
-    color: var(--rosa-texto);
-    margin-bottom: 30px;
-    font-size: 2.5em;
-    text-align: center;
-}
 
 /* --- Card de Metas Resumo --- */
 .card-metas-resumo {
@@ -1318,5 +1264,33 @@ h1 {
     .metas-lista {
         flex-direction: column;
         gap: 10px;
+    }
+}
+
+/* --- Media Query para Telas Menores (Celulares e Tablets) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Resetar o layout de múltiplas colunas */
+    .container-principal, .rastreador-wrapper, .conteudo-plano {
+        flex-direction: column; /* Transforma colunas em uma única pilha vertical */
+        display: flex; /* Garante que a flex-direction funcione */
+        gap: 20px;
+    }
+    
+    /* 2. Fazer com que os elementos ocupem a largura total */
+    .sidebar, .card-calendario {
+        width: 100%; /* Ocupa a largura total do container */
+        margin-right: 0;
+    }
+
+    /* 3. Ajustar o padding e as margens para celulares */
+    .cabecalho {
+        padding: 10px 20px; /* Reduz o padding do cabeçalho */
+    }
+    
+    /* 4. Esconder ou simplificar elementos muito grandes */
+    .cabecalho nav a {
+        font-size: 0.9em;
+        margin-left: 10px;
     }
 }

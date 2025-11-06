@@ -64,7 +64,7 @@
 
                 <div class="card-rastreio">
                     <h2 id="titulo-rastreio">Hábitos para: 31/10/2025</h2>
-                    <p class="status-dia" id="status-dia">Nenhum hábito marcado ainda.</p>
+                    
 
                     <ul class="lista-habitos" id="lista-habitos">
                         <li data-habit-id="1">
@@ -119,6 +119,65 @@
         </div>
 
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const habitList = document.querySelector('.lista-habitos');
+
+            // 1. FUNÇÃO PARA CARREGAR OS HÁBITOS SALVOS
+            function loadHabits() {
+                const savedHabits = JSON.parse(localStorage.getItem('habitsState')) || {};
+
+                // Itera sobre todos os checkboxes da lista
+                habitList.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                    // Obtém o ID do hábito a partir do atributo data-habit-id do <li> pai
+                    const listItem = checkbox.closest('li');
+                    const habitId = listItem ? listItem.dataset.habitId : null;
+
+                    if (habitId && savedHabits[habitId]) {
+                        // Se o estado estiver salvo como 'true', marca o checkbox
+                        checkbox.checked = true;
+                    } else {
+                        checkbox.checked = false;
+                    }
+                });
+            }
+
+            // 2. FUNÇÃO PARA SALVAR O ESTADO ATUAL
+            function saveHabits() {
+                const habitsState = {};
+
+                // Itera sobre todos os checkboxes
+                habitList.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                    const listItem = checkbox.closest('li');
+                    const habitId = listItem ? listItem.dataset.habitId : null;
+                    
+                    if (habitId) {
+                        // Salva o estado (true ou false) no objeto
+                        habitsState[habitId] = checkbox.checked;
+                    }
+                });
+                
+                // Salva o objeto completo no localStorage
+                localStorage.setItem('habitsState', JSON.stringify(habitsState));
+            }
+
+            // 3. ADICIONA OUVINTE DE EVENTO PARA MARCAR/DESMARCAR
+            habitList.addEventListener('change', (event) => {
+                // Verifica se o elemento alterado é um checkbox
+                if (event.target.type === 'checkbox') {
+                    // Salva o novo estado imediatamente
+                    saveHabits();
+                    // O CSS já trata o efeito visual (riscar o texto)
+                }
+            });
+
+            // Carrega o estado dos hábitos quando a página abrir
+            loadHabits();
+        });
+    </script>
+
+</body>
+</html>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>

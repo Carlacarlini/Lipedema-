@@ -1294,3 +1294,248 @@ body {
         margin-left: 10px;
     }
 }
+/* --- Estilos para a Navegação de Cardápios --- */
+.cardapio-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-dia {
+    background-color: var(--rosa-claro);
+    color: var(--rosa-escuro);
+    border: 1px solid var(--rosa-escuro);
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-dia:hover {
+    background-color: var(--rosa-medio);
+}
+
+
+.btn-dia.ativo {
+    background-color: var(--rosa-texto);
+    color: var(--branco);
+    border-color: var(--rosa-texto);
+}
+
+
+.cardapio-dia.oculto {
+    display: none;
+}
+
+
+.exercicios-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+
+.btn-foco {
+    background-color: var(--rosa-claro);
+    color: var(--rosa-escuro);
+    border: 1px solid var(--rosa-escuro);
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-foco.ativo {
+    background-color: var(--rosa-texto);
+    color: var(--branco);
+    border-color: var(--rosa-texto);
+}
+
+
+.foco-exercicio.oculto {
+    display: none;
+}
+
+
+/* Fundo escuro/transparente que cobre a tela inteira */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fixado na tela */
+    z-index: 1000; /* Fica acima de todo o conteúdo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); 
+}
+
+
+.modal-content {
+    background-color: var(--branco);
+    margin: 5% auto; /* 5% do topo e centralizado */
+    padding: 30px;
+    border: 1px solid var(--rosa-medio);
+    width: 80%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: slideIn 0.4s ease-out; /* Animação simples de entrada */
+}
+
+
+.close-btn {
+    color: var(--cinza-texto);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--rosa-texto);
+}
+
+
+.modal-content h2 {
+    color: var(--rosa-texto);
+    border-bottom: 2px solid var(--rosa-medio);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.lista-alimentos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.coluna-alimento h3 {
+    color: var(--rosa-escuro);
+    margin-top: 0;
+    border-bottom: 1px dashed var(--rosa-claro);
+    padding-bottom: 5px;
+}
+
+.coluna-alimento ul {
+    list-style: none;
+    padding: 0;
+}
+
+.coluna-alimento ul li {
+    margin-bottom: 8px;
+    font-size: 1em;
+    padding-left: 10px;
+    border-left: 3px solid var(--rosa-claro);
+}
+
+.nota-modal {
+    margin-top: 30px;
+    padding: 10px;
+    background-color: var(--rosa-claro);
+    border-radius: 8px;
+    text-align: center;
+    color: var(--rosa-texto);
+    font-size: 0.9em;
+}
+
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+
+@media (max-width: 600px) {
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    .lista-alimentos-grid {
+        grid-template-columns: 1fr; /* Empilha as colunas em mobile */
+    }
+}
+
+
+.cards-metas-foco {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+
+.card-foco {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--branco);
+    border: 2px solid var(--rosa-claro);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card-foco i {
+    font-size: 2.5em;
+    color: var(--rosa-texto);
+    margin-bottom: 10px;
+}
+
+.card-foco h3 {
+    color: var(--rosa-escuro);
+    margin: 10px 0;
+}
+
+.card-foco p {
+    font-size: 0.9em;
+    color: var(--cinza-texto);
+}
+
+
+.card-foco.ativo {
+    background-color: var(--rosa-claro);
+    border-color: var(--rosa-texto);
+    box-shadow: 0 4px 15px rgba(230, 80, 100, 0.3);
+    transform: translateY(-5px); /* Efeito de elevação */
+}
+
+.card-foco.ativo i {
+    color: var(--rosa-texto);
+}
+
+
+/* AJUSTE NA ÁREA DE FEEDBACK */
+.meta-feedback {
+    background-color: var(--rosa-claro);
+    border: 1px solid var(--rosa-medio);
+    padding: 15px; /* Controla o espaço interno */
+    border-radius: 10px;
+    margin-top: 20px; /* Controla o espaço acima */
+    margin-bottom: 0; /* GARANTE QUE A DIV EXTERNA NÃO TENHA MARGEM ABAIXO */
+    color: var(--rosa-escuro);
+    font-weight: 500;
+}
+
+/* AJUSTE NO PARÁGRAFO DENTRO DO FEEDBACK */
+.meta-feedback p {
+    margin-top: 0;
+    margin-bottom: 0; /* ESSENCIAL: ZERA A MARGEM PADRÃO DO PARÁGRAFO */
+    line-height: 1.4; /* Ajusta a altura da linha para visualização */
+}
+/* Responsividade */
+@media (max-width: 768px) {
+    .cards-metas-foco {
+        flex-direction: column;
+    }
+}

@@ -36,88 +36,481 @@
                     <a href="habitos.html"><i class="fas fa-chart-line"></i> Meus Hábitos (Rastreio)</a>
                     <a href="metas.html"class="active"><i class="fas fa-heartbeat"></i> Metas de Saúde</a>
                     <a href="comunidade.html"><i class="fas fa-users"></i> Comunidade</a>
-                    <a href="login.html"><i class="fas fa-sign-out"></i> Sair</a>
+                    <a href="index.html"><i class="fas fa-sign-out"></i> Sair</a>
                 </nav>
             </aside>
         </div>
        <div class="col-10">
         <h1>Meu Plano de Metas de Saúde Anti-Lipedema</h1>
         
-        <div class="card-metas-resumo">
-            <h2>Metas Focadas (Próximos 30 dias)</h2>
-            <div class="metas-lista">
-                <div class="meta-item"><i class="fas fa-bullseye"></i> Reduzir a dor em 20%.</div>
-                <div class="meta-item"><i class="fas fa-bullseye"></i> Consistência: 5 treinos/semana.</div>
-                <div class="meta-item"><i class="fas fa-bullseye"></i> Perder 2 cm de circunferência na panturrilha.</div>
-                <button class="btn-editar-metas"><i class="fas fa-edit"></i> Editar Metas</button>
-            </div>
+        <section class="metas-focadas card-plano">
+    <h2><i class="fas fa-bullseye"></i> Selecione seu Foco Principal</h2>
+    <p>Escolha a meta que você deseja priorizar neste ciclo. O foco pode ser alterado a qualquer momento.</p>
+
+    <div class="cards-metas-foco">
+        
+        <div class="card-foco" 
+             data-meta-id="volume" 
+             onclick="selectMeta('volume', this)">
+            <i class="fas fa-weight"></i>
+            <h3>Redução de Volume e Peso</h3>
+            <p>Foco em dieta hipocalórica anti-inflamatória e exercícios aeróbicos de baixo impacto.</p>
         </div>
+
+        <div class="card-foco" 
+             data-meta-id="dor" 
+             onclick="selectMeta('dor', this)">
+            <i class="fas fa-tint"></i>
+            <h3>Alívio da Dor e Edema</h3>
+            <p>Foco em drenagem, compressão, suplementos anti-inflamatórios e hidratação.</p>
+        </div>
+
+        <div class="card-foco" 
+             data-meta-id="forca" 
+             onclick="selectMeta('forca', this)">
+            <i class="fas fa-dumbbell"></i>
+            <h3>Aumento de Força e Tônus</h3>
+            <p>Foco em fortalecimento muscular com bandas de resistência e Pilates.</p>
+        </div>
+
+    </div>
+    
+    <div id="metaFeedback" class="meta-feedback">
+        <p>Clique em uma das metas acima para ativá-la e ver um resumo da estratégia!</p>
+    </div>
+</section>
 
         <div class="conteudo-plano">
             
             <section class="plano-dieta card-plano">
-                <h2><i class="fas fa-apple-alt"></i> Dieta Anti-Inflamatória Sugerida</h2>
-                <p class="dieta-foco">Foco: Redução de alimentos processados, açúcar e glúten. Aumento de ômega-3 e antioxidantes.</p>
+    <h2><i class="fas fa-apple-alt"></i> Dieta Anti-Inflamatória Sugerida</h2>
+    <p class="dieta-foco">Foco: Redução de alimentos processados, açúcar e glúten. Aumento de ômega-3 e antioxidantes.</p>
 
-                <div class="cardapio-dia">
-                    <h3>Cardápio Sugerido: Dia Simples</h3>
-                    
-                    <div class="refeicao-item">
-                        <span class="refeicao-titulo"><i class="fas fa-sun"></i> Café da Manhã</span>
-                        <p>Omelete com cúrcuma, espinafre e azeite de oliva. Frutas vermelhas (morangos, mirtilos).</p>
-                    </div>
+    <div class="cardapio-nav">
+        <button class="btn-dia ativo" onclick="showCardapio('dia1', this)">Dia 1</button>
+        <button class="btn-dia" onclick="showCardapio('dia2', this)">Dia 2</button>
+        <button class="btn-dia" onclick="showCardapio('dia3', this)">Dia 3</button>
+        <button class="btn-dia" onclick="showCardapio('dia4', this)">Dia 4</button>
+        <button class="btn-dia" onclick="showCardapio('dia5', this)">Dia 5</button>
+        <button class="btn-dia" onclick="showCardapio('dia6', this)">Dia 6</button>
+        <button class="btn-dia" onclick="showCardapio('dia7', this)">Dia 7</button>
+    </div>
 
-                    <div class="refeicao-item">
-                        <span class="refeicao-titulo"><i class="fas fa-lemon"></i> Almoço</span>
-                        <p>Salmão assado (fonte de ômega-3), brócolis no vapor, e 1/2 xícara de quinoa. Regar com azeite extra virgem.</p>
-                    </div>
+    <div class="cardapio-dia" id="dia1">
+        <h3>Cardápio Sugerido: Dia 1 (Foco em Ômega-3)</h3>
+        
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-sun"></i> Café da Manhã</span>
+            <p>Omelete com cúrcuma, espinafre e azeite de oliva. Frutas vermelhas (morangos, mirtilos).</p>
+        </div>
 
-                    <div class="refeicao-item">
-                        <span class="refeicao-titulo"><i class="fas fa-bolt"></i> Lanche da Tarde</span>
-                        <p>Punhado de nozes ou amêndoas e um copo de chá verde (antioxidante).</p>
-                    </div>
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-lemon"></i> Almoço</span>
+            <p>Salmão assado (fonte de ômega-3), brócolis no vapor, e 1/2 xícara de quinoa. Regar com azeite extra virgem.</p>
+        </div>
 
-                    <div class="refeicao-item">
-                        <span class="refeicao-titulo"><i class="fas fa-moon"></i> Jantar</span>
-                        <p>Sopa de legumes (cenoura, abobrinha, aipo) com frango desfiado. Evitar carboidratos simples à noite.</p>
-                    </div>
-                </div>
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-bolt"></i> Lanche da Tarde</span>
+            <p>Punhado de nozes ou amêndoas e um copo de chá verde (antioxidante).</p>
+        </div>
 
-                <a href="#" class="btn-saiba-mais"><i class="fas fa-book-reader"></i> Ver Lista Completa de Alimentos Permitidos</a>
-            </section>
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-moon"></i> Jantar</span>
+            <p>Sopa de legumes (cenoura, abobrinha, aipo) com frango desfiado. Evitar carboidratos simples à noite.</p>
+        </div>
+    </div>
+
+    <div class="cardapio-dia oculto" id="dia2">
+        <h3>Cardápio Sugerido: Dia 2 (Foco em Fibras e Leguminosas)</h3>
+        
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-sun"></i> Café da Manhã</span>
+            <p>Iogurte natural (ou kefir) com sementes de chia, linhaça e 1/2 banana picada.</p>
+        </div>
+
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-lemon"></i> Almoço</span>
+            <p>Salada de grão de bico com atum, pepino, tomate cereja e azeite de oliva extra virgem.</p>
+        </div>
+
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-bolt"></i> Lanche da Tarde</span>
+            <p>Maçã com manteiga de amendoim (natural) e um copo de chá de gengibre.</p>
+        </div>
+
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-moon"></i> Jantar</span>
+            <p>Filé de peito de frango grelhado com purê de abóbora e um mix de folhas verdes escuras.</p>
+        </div>
+    </div>
+    
+    <div class="cardapio-dia oculto" id="dia3">
+        <h3>Cardápio Sugerido: Dia 3 (Foco em Antioxidantes)</h3>
+        
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-sun"></i> Café da Manhã</span>
+            <p>Vitamina com leite vegetal, couve, frutas vermelhas congeladas, gengibre e proteína whey/vegetal.</p>
+        </div>
+
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-lemon"></i> Almoço</span>
+            <p>Bife magro grelhado (poucas vezes na semana) com arroz integral e legumes coloridos salteados no azeite.</p>
+        </div>
+
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-bolt"></i> Lanche da Tarde</span>
+            <p>Abacate amassado com cacau em pó e um toque de mel (opcional).</p>
+        </div>
+
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-moon"></i> Jantar</span>
+            <p>Sopa ou Caldo de Legumes turbinado com especiarias (cúrcuma e pimenta do reino) e ovo cozido.</p>
+        </div>
+    </div>
+    <div class="cardapio-dia oculto" id="dia4">
+        <h3>Cardápio Sugerido: Dia 4 (Foco em Cúrcuma)</h3>
+        
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-sun"></i> Café da Manhã</span>
+            <p>Panqueca de banana (sem glúten) com farinha de aveia, e 'Golden Milk' (leite vegetal com cúrcuma e gengibre).</p>
+        </div>
+
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-lemon"></i> Almoço</span>
+            <p>Frango xadrez (caseiro, sem industrializados) com arroz integral e pimentões coloridos. Abacaxi de sobremesa.</p>
+        </div>
+
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-bolt"></i> Lanche da Tarde</span>
+            <p>Pão de queijo caseiro com farinha de grão de bico (opcional) e suco de melancia natural.</p>
+        </div>
+
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-moon"></i> Jantar</span>
+            <p>Tilápia grelhada (fonte de proteína magra) com aspargos salteados e batata doce assada.</p>
+        </div>
+    </div>
+    
+    <div class="cardapio-dia oculto" id="dia5">
+        <h3>Cardápio Sugerido: Dia 5 (Foco em Vegetais)</h3>
+        
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-sun"></i> Café da Manhã</span>
+            <p>Smoothie de banana, espinafre e leite de amêndoas. Adicionar uma colher de semente de linhaça.</p>
+        </div>
+
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-lemon"></i> Almoço</span>
+            <p>Carne moída refogada com tomate e azeitonas, servida com bastante couve refogada e feijão (moderado).</p>
+        </div>
+
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-bolt"></i> Lanche da Tarde</span>
+            <p>Pêra e um punhado de avelãs. Beber 500ml de água saborizada com hortelã.</p>
+        </div>
+
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-moon"></i> Jantar</span>
+            <p>Salada grande de folhas verdes escuras, cenoura ralada, ovos cozidos e azeite de oliva. Pão integral sem glúten (opcional).</p>
+        </div>
+    </div>
+    
+    <div class="cardapio-dia oculto" id="dia6">
+        <h3>Cardápio Sugerido: Dia 6 (Foco em Gorduras Saudáveis)</h3>
+        
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-sun"></i> Café da Manhã</span>
+            <p>Pão de batata doce (ou mandioca) com pasta de abacate (guacamole simples).</p>
+        </div>
+
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-lemon"></i> Almoço</span>
+            <p>Bacalhau com legumes (brócolis, couve-flor) e bastante azeite de oliva. Pode usar um pouco de batata doce.</p>
+        </div>
+
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-bolt"></i> Lanche da Tarde</span>
+            <p>Cacau 70% com uma xícara de chá de erva-doce.</p>
+        </div>
+
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-moon"></i> Jantar</span>
+            <p>Omelete com queijo cottage ou ricota (proteínas leves) e cogumelos. Salada de pepino e tomate.</p>
+        </div>
+    </div>
+
+    <div class="cardapio-dia oculto" id="dia7">
+        <h3>Cardápio Sugerido: Dia 7 (Dia Vegetariano Leve)</h3>
+        
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-sun"></i> Café da Manhã</span>
+            <p>Mingau de aveia (com leite vegetal) e sementes de girassol e abóbora.</p>
+        </div>
+
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-lemon"></i> Almoço</span>
+            <p>Lentilha cozida com legumes variados (cenoura, abobrinha) e arroz integral.</p>
+        </div>
+
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-bolt"></i> Lanche da Tarde</span>
+            <p>Fruta da estação (ex: mamão, kiwi) com um pouco de mel ou iogurte natural.</p>
+        </div>
+
+        <div class="refeicao-item">
+            <span class="refeicao-titulo"><i class="fas fa-moon"></i> Jantar</span>
+            <p>Wrap integral com recheio de tofu temperado com ervas finas e bastante rúcula.</p>
+        </div>
+    </div>
+    
+    <a href="#" class="btn-saiba-mais"id="openModalBtn"><i class="fas fa-book-reader"></i> Ver Lista Completa de Alimentos Permitidos</a>
+</section>
             
-            <section class="plano-exercicios card-plano">
-                <h2><i class="fas fa-running"></i> Exercícios e Movimento Terapêutico</h2>
-                <p class="exercicio-foco">Foco: Ativação linfática suave, baixo impacto e fortalecimento muscular.</p>
+           <section class="plano-exercicios card-plano">
+    <h2><i class="fas fa-running"></i> Exercícios e Movimento Terapêutico</h2>
+    <p class="exercicio-foco">Foco: Ativação linfática suave, baixo impacto e fortalecimento muscular.</p>
 
-                <ul class="lista-exercicios">
-                    <li>
-                        <span class="tipo-exercicio">3x/semana: Natação/Hidroginástica.</span> 
-                        <p>Benefício: A pressão da água é excelente para a drenagem linfática. (30-45 minutos)</p>
-                    </li>
-                    <li>
-                        <span class="tipo-exercicio">Diário: Caminhada Leve.</span> 
-                        <p>Benefício: Movimento da panturrilha (bomba muscular) para impulsionar a linfa. (30 minutos)</p>
-                    </li>
-                    <li>
-                        <span class="tipo-exercicio">2x/semana: Yoga Restaurativa.</span> 
-                        <p>Benefício: Posturas de elevação e relaxamento ajudam a reduzir a inflamação e a dor.</p>
-                    </li>
-                    <li>
-                        <span class="tipo-exercicio">Diário: Elevação das Pernas.</span> 
-                        <p>Benefício: Essencial para reduzir o inchaço ao final do dia. (15 minutos)</p>
-                    </li>
-                </ul>
+    <div class="exercicios-nav cardapio-nav">
+        <button class="btn-foco ativo" onclick="showFoco('drenagem', this)">Drenagem</button>
+        <button class="btn-foco" onclick="showFoco('fortalecimento', this)">Fortalecimento</button>
+        <button class="btn-foco" onclick="showFoco('flexibilidade', this)">Flexibilidade</button>
+    </div>
+    
+    <div class="foco-exercicio" id="drenagem">
+        <ul class="lista-exercicios">
+            <li>
+                <span class="tipo-exercicio">Natação / Hidroginástica</span> 
+                <p>Benefício: A pressão hidrostática é o melhor estímulo natural para a drenagem linfática. (3x/semana)</p>
+            </li>
+            <li>
+                <span class="tipo-exercicio">Elevação das Pernas (Wall Sit Invertido)</span> 
+                <p>Benefício: Alivia o inchaço ao final do dia, utilizando a gravidade. (Diário, 15 min)</p>
+            </li>
+            <li>
+                <span class="tipo-exercicio">Caminhada Leve e Ciclismo</span> 
+                <p>Benefício: Ativa a bomba muscular da panturrilha de forma suave. (Diário, 30 min)</p>
+            </li>
+        </ul>
+        <a href="https://www.youtube.com/embed/LX2ggzMO8p8" class="btn-saiba-mais"><i class="fas fa-video"></i> Ver Técnicas de Drenagem Linfática Manual (DLM)</a>
+    </div>
+    
+    <div class="foco-exercicio oculto" id="fortalecimento">
+        <ul class="lista-exercicios">
+            <li>
+                <span class="tipo-exercicio">Pilates de Solo (Mat Pilates)</span> 
+                <p>Foco: Fortalecimento do CORE e estabilidade, melhorando a postura sem impacto nas articulações. (2x/semana)</p>
+            </li>
+            <li>
+                <span class="tipo-exercicio">Bandas de Resistência (Light/Médio)</span> 
+                <p>Foco: Trabalhar coxas e glúteos com baixa carga e sem levantar peso. (2x/semana)</p>
+            </li>
+            <li>
+                <span class="tipo-exercicio">Subida de Degraus (Step)</span> 
+                <p>Foco: Fortalecimento moderado das panturrilhas, mas deve ser feito com compressão. (15 min)</p>
+            </li>
+        </ul>
+        <a href="https://www.youtube.com/embed/sRaTqtBTvWw" class="btn-saiba-mais"><i class="fas fa-video"></i> Planilha de Exercícios com Baixa Carga</a>
+    </div>
+    
+    <div class="foco-exercicio oculto" id="flexibilidade">
+        <ul class="lista-exercicios">
+            <li>
+                <span class="tipo-exercicio">Yoga Restaurativa</span> 
+                <p>Foco: Posturas suaves de abertura e elevação que auxiliam o fluxo linfático e relaxam a dor. (2x/semana)</p>
+            </li>
+            <li>
+                <span class="tipo-exercicio">Alongamento Pós-Treino (Frio)</span> 
+                <p>Foco: Manter a amplitude de movimento e evitar encurtamento muscular nas pernas. (Diário)</p>
+            </li>
+            <li>
+                <span class="tipo-exercicio">Respiração Diafragmática Profunda</span> 
+                <p>Foco: A respiração correta é uma bomba auxiliar para a circulação linfática do tronco. (Diário)</p>
+            </li>
+        </ul>
+        <a href="https://www.youtube.com/embed/We44qc_6Gj4" class="btn-saiba-mais"><i class="fas fa-video"></i> Rotina de Alongamento Calmante</a>
+    </div>
 
-                <a href="#" class="btn-saiba-mais"><i class="fas fa-video"></i> Ver Vídeos de Exercícios de Baixo Impacto</a>
-            </section>
-
+    
+</section>
         </div>
 
         <button class="btn-salvar-plano-final"><i class="fas fa-save"></i> Salvar Meu Plano Personalizado</button>
         </div>
 
     </main>
+    </main>
+
+    <script>
+        function showCardapio(dayId, clickedButton) {
+            // 1. Oculta todos os cardápios
+            document.querySelectorAll('.cardapio-dia').forEach(card => {
+                card.classList.add('oculto');
+            });
+
+            // 2. Remove a classe 'ativo' de todos os botões
+            document.querySelectorAll('.btn-dia').forEach(btn => {
+                btn.classList.remove('ativo');
+            });
+
+            // 3. Mostra o cardápio desejado
+            const targetCardapio = document.getElementById(dayId);
+            if (targetCardapio) {
+                targetCardapio.classList.remove('oculto');
+            }
+
+            // 4. Marca o botão clicado como 'ativo'
+            clickedButton.classList.add('ativo');
+        }
+
+    </script>
+    <script>
+        // Função de troca para o Cardápio (Mantenha esta)
+        function showCardapio(dayId, clickedButton) {
+            // ... (código existente da troca de cardápio) ...
+            document.querySelectorAll('.cardapio-dia').forEach(card => {
+                card.classList.add('oculto');
+            });
+            document.querySelectorAll('.btn-dia').forEach(btn => {
+                btn.classList.remove('ativo');
+            });
+            const targetCardapio = document.getElementById(dayId);
+            if (targetCardapio) {
+                targetCardapio.classList.remove('oculto');
+            }
+            clickedButton.classList.add('ativo');
+        }
+
+        // NOVO CÓDIGO: Função de troca para os Focos de Exercício
+        function showFoco(focoId, clickedButton) {
+            // 1. Oculta todos os conteúdos de exercícios
+            document.querySelectorAll('.foco-exercicio').forEach(foco => {
+                foco.classList.add('oculto');
+            });
+
+            // 2. Remove a classe 'ativo' de todos os botões de foco
+            document.querySelectorAll('.btn-foco').forEach(btn => {
+                btn.classList.remove('ativo');
+            });
+
+            // 3. Mostra o conteúdo de foco desejado
+            const targetFoco = document.getElementById(focoId);
+            if (targetFoco) {
+                targetFoco.classList.remove('oculto');
+            }
+
+            // 4. Marca o botão clicado como 'ativo'
+            clickedButton.classList.add('ativo');
+        }
+        // Adicione este código ao final da sua tag <script> existente
+document.addEventListener('DOMContentLoaded', function() {
+    // Referências
+    const modal = document.getElementById("alimentosModal");
+    const btn = document.getElementById("openModalBtn");
+    const span = document.getElementsByClassName("close-btn")[0];
+
+    // Quando o usuário clica no botão, abre o modal
+    btn.onclick = function(e) {
+        e.preventDefault(); // Impede o link de ir para o topo da página
+        modal.style.display = "block";
+    }
+
+    // Quando o usuário clica no (x), fecha o modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Quando o usuário clica fora do modal, fecha o modal
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
+function selectMeta(metaId, clickedCard) {
+    // 1. Remove a classe 'ativo' de todos os cards
+    document.querySelectorAll('.card-foco').forEach(card => {
+        card.classList.remove('ativo');
+    });
+
+    // 2. Adiciona a classe 'ativo' no card clicado
+    clickedCard.classList.add('ativo');
+
+    // 3. Define a mensagem de feedback
+    const feedbackElement = document.getElementById('metaFeedback');
+    let message = '';
+    
+    switch (metaId) {
+        case 'volume':
+            message = 'Meta Ativada: **Redução de Volume!** Priorize natação, caminhadas, e foque na dieta do Dia 1 e Dia 6.';
+            break;
+        case 'dor':
+            message = 'Meta Ativada: **Alívio da Dor!** Priorize drenagem, Yoga, compressão e a ingestão de chás anti-inflamatórios.';
+            break;
+        case 'forca':
+            message = 'Meta Ativada: **Força e Tônus!** Priorize os exercícios de Fortalecimento e a ingestão de proteínas (Cardápios Dia 2 e Dia 3).';
+            break;
+        default:
+            message = 'Sua meta foi ativada. Lembre-se de manter a consistência!';
+    }
+    
+    // Atualiza a área de feedback (usando innerHTML para o negrito)
+    feedbackElement.innerHTML = `<p>${message}</p>`;
+
+    // (Opcional) Você pode usar o localStorage para manter a meta ativa na próxima visita
+    // localStorage.setItem('metaAtiva', metaId); 
+}
+
+// Opcionalmente, adicione um carregamento para a primeira vez que a página abrir
+document.addEventListener('DOMContentLoaded', () => {
+    // ... (mantenha os outros códigos JS, como showCardapio e showFoco) ...
+    
+    // Define um card como ativo ao carregar, se não houver um no localStorage
+    const firstCard = document.querySelector('.card-foco');
+    if (firstCard && !localStorage.getItem('metaAtiva')) {
+        firstCard.classList.add('ativo');
+    }
+});
+    </script>
+    <div id="alimentosModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2><i class="fas fa-heartbeat"></i> Lista de Alimentos Anti-Inflamatórios</h2>
+
+        <div class="lista-alimentos-grid">
+            
+            <div class="coluna-alimento">
+                <h3>✅ Alimentos Permtidos e Essenciais</h3>
+                <ul>
+                    <li>**Gorduras:** Azeite de oliva extra virgem, abacate, óleo de coco.</li>
+                    <li>**Peixes:** Salmão, sardinha, atum (ricos em Ômega-3).</li>
+                    <li>**Vegetais:** Brócolis, couve-flor, couve, espinafre, aipo.</li>
+                    <li>**Frutas:** Frutas vermelhas (mirtilo, morango), cereja, kiwi, maçã.</li>
+                    <li>**Especiarias:** Cúrcuma, Gengibre, Pimenta do Reino, Alho.</li>
+                    <li>**Grãos:** Quinoa, arroz integral, aveia (sem glúten).</li>
+                </ul>
+            </div>
+            
+            <div class="coluna-alimento">
+                <h3>❌ Alimentos a Evitar ou Reduzir</h3>
+                <ul>
+                    <li>**Gorduras:** Óleos vegetais refinados (soja, girassol, milho).</li>
+                    <li>**Processados:** Alimentos ultraprocessados, fast food, congelados.</li>
+                    <li>**Carboidratos:** Açúcar refinado, doces, pães e massas brancas.</li>
+                    <li>**Bebidas:** Refrigerantes, sucos industrializados.</li>
+                    <li>**Laticínios:** Leite de vaca integral (consumo deve ser moderado/alternado).</li>
+                    <li>**Álcool:** Consumo excessivo de bebidas alcoólicas.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <p class="nota-modal">**Nota:** Consulte sempre um nutricionista para um plano alimentar individualizado.</p>
+    </div>
+</div>
+</body>
+</html>
+</body>
+</html>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>

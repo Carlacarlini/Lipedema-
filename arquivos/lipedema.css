@@ -1127,8 +1127,8 @@ body {
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    height: 100%; /* Garante que os cards tenham a mesma altura visualmente */
     box-sizing: border-box;
+    margin-bottom: 20px;
 }
 
 .card-plano h2 {
@@ -1517,14 +1517,15 @@ body {
 
 /* AJUSTE NA ÁREA DE FEEDBACK */
 .meta-feedback {
-    background-color: var(--rosa-claro);
+    background-color: #d80056;
     border: 1px solid var(--rosa-medio);
-    padding: 15px; /* Controla o espaço interno */
+    padding: 30px; /* Controla o espaço interno */
     border-radius: 10px;
     margin-top: 20px; /* Controla o espaço acima */
     margin-bottom: 0; /* GARANTE QUE A DIV EXTERNA NÃO TENHA MARGEM ABAIXO */
-    color: var(--rosa-escuro);
+    color: #FFF;
     font-weight: 500;
+    font-size: 20px;
 }
 
 /* AJUSTE NO PARÁGRAFO DENTRO DO FEEDBACK */
@@ -1538,4 +1539,8 @@ body {
     .cards-metas-foco {
         flex-direction: column;
     }
+}
+
+.modal-backdrop.show {
+    z-index: 900;
 }

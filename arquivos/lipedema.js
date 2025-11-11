@@ -56,11 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
     atualizarInfoPerfil(); // Chama na carga inicial
 
     // Lógica para upload de foto (pré-visualização)
-    uploadFotoInput.addEventListener('change', function(event) {
+    uploadFotoInput.addEventListener('change', function (event) {
         const file = event.target.files[0];
         if (file) {
             const reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 previewFoto.src = e.target.result;
             }
             reader.readAsDataURL(file);
@@ -74,7 +74,7 @@ function calcularIMC() {
 
     const valorIMCElem = document.getElementById('valor-imc');
     const classificacaoElem = document.getElementById('classificacao-imc');
-    
+
     if (isNaN(peso) || isNaN(altura) || altura <= 0) {
         valorIMCElem.textContent = '---';
         classificacaoElem.textContent = 'Dados Inválidos';
@@ -138,10 +138,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderCalendar() {
         const ano = dataAtual.getFullYear();
         const mes = dataAtual.getMonth();
-        
+
         // Nomes dos meses em português
         const nomesMeses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
-        
+
         monthYear.textContent = `${nomesMeses[mes]} ${ano}`;
         diasCalendario.innerHTML = '';
 
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const primeiroDia = new Date(ano, mes, 1).getDay();
         // Determina o último dia do mês
         const ultimoDia = new Date(ano, mes + 1, 0).getDate();
-        
+
         // 1. Cria os dias vazios do início do mês
         for (let i = 0; i < primeiroDia; i++) {
             const diaVazio = document.createElement('div');
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
             diaElement.classList.add('dia-calendario');
             diaElement.textContent = dia;
             diaElement.dataset.date = `${ano}-${mes + 1 < 10 ? '0' : ''}${mes + 1}-${dia < 10 ? '0' : ''}${dia}`;
-            
+
             // Marca o dia de hoje
             const hoje = new Date();
             if (dia === hoje.getDate() && mes === hoje.getMonth() && ano === hoje.getFullYear()) {
@@ -185,10 +185,10 @@ document.addEventListener('DOMContentLoaded', () => {
             diaElement.addEventListener('click', (e) => {
                 // Remove a classe 'selecionado' de todos os dias
                 document.querySelectorAll('.dia-calendario').forEach(d => d.classList.remove('selecionado'));
-                
+
                 // Adiciona a classe ao dia clicado
                 e.currentTarget.classList.add('selecionado');
-                
+
                 // Atualiza a data selecionada e a seção de rastreio
                 const [y, m, d] = e.currentTarget.dataset.date.split('-').map(Number);
                 dataSelecionada = new Date(y, m - 1, d);
@@ -203,11 +203,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateRastreioSection() {
         const dataFormatada = `${dataSelecionada.getDate() < 10 ? '0' : ''}${dataSelecionada.getDate()}/${dataSelecionada.getMonth() + 1 < 10 ? '0' : ''}${dataSelecionada.getMonth() + 1}/${dataSelecionada.getFullYear()}`;
         tituloRastreio.textContent = `Hábitos para: ${dataFormatada}`;
-        
+
         // Simula o status do dia
         const dataKey = dataSelecionada.toISOString().split('T')[0];
         const dadosDia = dadosHabitosSimulados[dataKey];
-        
+
         if (dadosDia) {
             statusDia.textContent = `${dadosDia.completos} de ${dadosDia.total} hábitos concluídos.`;
             // statusDia.style.color = dadosDia.completos === dadosDia.total ? '#28a745' : var(--rosa-texto);
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
             statusDia.textContent = 'Nenhum hábito marcado ainda.';
             // statusDia.style.color = var(--rosa-texto);
         }
-        
+
         // Em um projeto real, você carregaria o status dos checkboxes aqui.
     }
 
@@ -235,3 +235,19 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCalendar();
     updateRastreioSection();
 });
+
+function adicionarMedida() {
+    const divMedidas = document.getElementById('medidas-grid');
+
+    const inputTitulo = document.getElementById('input-titulo');
+    const inputMedida = document.getElementById('input-medida');
+
+    divMedidas.innerHTML += `
+            <div class="medida-item"><span>${inputTitulo.value}:</span>
+                <p>${inputMedida.value} cm</p>
+            </div>
+        `;
+
+    inputTitulo.value = '';
+    inputMedida.value = '';
+}
